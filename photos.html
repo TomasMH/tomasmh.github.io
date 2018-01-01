@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+
+<Head>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+
+<script>
+// create references to the modal...
+var modal = document.getElementById('myModal');
+// to all images -- note I'm using a class!
+var images = document.getElementsByClassName('myImages');
+// the image in the modal
+var modalImg = document.getElementById("img01");
+// and the caption in the modal
+var captionText = document.getElementById("caption");
+
+// Go through all of the images with our custom class
+for (var i = 0; i < images.length; i++) {
+  var img = images[i];
+  // and attach our click listener for this image.
+  img.onclick = function(evt) {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+<style>
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 23.94%;
+    padding: 0.5vw;
+}
+
+.column img {
+    margin-top: 0.7vw;
+    width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout*/
+@media (max-width: 800px) {
+    .column {
+        width: 48%;
+    }
+}
+
+ /* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+</style>
+
+</Head>
+
+<div id="fade">
+
+<div class="photos">
+
+<div class="row"> 
+  <div class="column">
+    <img class="myImages" id="myImg" img src="PS01.jpg">
+    <img class="myImages" id="myImg" img src="PS12.jpg" alt="Roxanne Duoro">
+    <img class="myImages" id="myImg" img src="PS04.jpg">	
+    <img class="myImages" id="myImg" img src="PS21.jpg">
+    <img class="myImages" id="myImg" img src="PS22.jpg" alt="Corey ">
+    <img class="myImages" id="myImg" img src="PS09.jpg">
+  </div>
+  <div class="column">
+    <img class="myImages" id="myImg" img src="PS13.jpg" alt="findname">
+    <img class="myImages" id="myImg" img src="PS20.jpg">
+	<img class="myImages" id="myImg" img src="PS06.jpg">
+    <img class="myImages" id="myImg" img src="PS07.jpg">
+    <img class="myImages" id="myImg" img src="PS16.jpg">
+    <img class="myImages" id="myImg" img src="PS03.jpg">
+  </div> 
+  <div class="column">
+    <img class="myImages" id="myImg" img src="PS17.jpg">
+    <img class="myImages" id="myImg" img src="PS10.jpg">
+	<img class="myImages" id="myImg" img src="PS05.jpg" alt="Adam Holloway">
+    <img class="myImages" id="myImg" img src="PS19.jpg">
+    <img class="myImages" id="myImg" img src="PS24.jpg" alt="Davina Cole">
+    <img class="myImages" id="myImg" img src="PS11.jpg">
+  </div>
+  <div class="column">
+    <img class="myImages" id="myImg" img src="PS14.jpg">
+	<img class="myImages" id="myImg" img src="PS08.jpg" alt="Davina Cole">
+    <img class="myImages" id="myImg" img src="PS02.jpg" alt="Rae Lim">
+    <img class="myImages" id="myImg" img src="PS26.jpg">
+    <img class="myImages" id="myImg" img src="PS15.jpg" alt="Sarah Something">
+    <img class="myImages" id="myImg" img src="PS23.jpg" alt="Megan Freeman">
+	<img class="myImages" id="myImg" img src="PS25.jpg">
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+  
+</div>
+
+</html>

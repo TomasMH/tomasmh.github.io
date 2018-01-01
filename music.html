@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+
+<script>
+
+$(document).ready(function () {
+	init();
+	function init(){
+		var current = 0;
+		var audio = $('#audio');
+		var playlist = $('#playlist');
+		var tracks = playlist.find('li a');
+		var len = tracks.length - 1;
+		audio[0].volume = .75;
+		audio[0].play();
+		playlist.on('click','a', function(e){
+			e.preventDefault();
+			link = $(this);
+			current = link.parent().index();
+			run(link, audio[0]);
+		});
+		audio[0].addEventListener('ended',function(e){
+			current++;
+			if(current == len){
+				current = 0;
+				link = playlist.find('a')[0];
+			}else{
+				link = playlist.find('a')[current];    
+			}
+			run($(link),audio[0]);
+		});
+	}
+	function run(link, player){
+			player.src = link.attr('href');
+			par = link.parent();
+			par.addClass('active').siblings().removeClass('active');
+			player.load();
+			player.play();
+	}
+});
+
+</script>
+
+
+<style>
+
+audio{
+width: 50vw;
+padding:10px;
+margin: 0 auto;
+
+}
+
+#playlist {
+width: 50vw;
+margin: 0 auto;
+
+}
+
+.active a{
+color:#3F51B5;
+text-decoration:none;
+
+}
+
+li {
+font-size:1.5vw;
+line-height: 2.2em;
+font-family:"Oxygen", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+list-style-type: none;
+text-align:center;
+color:#151515;
+
+display:block;
+text-decoration:none;
+}
+
+li a:hover{
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<div id="fade">
+
+<audio id="audio" preload="auto" tabindex="0" controls="" >
+  <source src="HL.mp3">
+  Your browser does not support html5 audio. Try firefox or Chrome.
+</audio>
+
+<ul id="playlist">
+
+<li class="active">
+<a href="HL.mp3">Hot Latte</a>
+</li>
+
+<li>
+<a href="MiB1.mp3">Fight 2 - Man is Beast</a>
+</li>
+
+<li>
+<a href="MiB2.mp3">Final Fight - Man is Beast</a>
+</li>
+
+<li>
+<a href="CZ.mp3">Comfort Zone</a>
+</li>
+
+<li>
+<a href="FoS.mp3">Formula of Shadows</a>
+</li>
+
+</ul>
+
+</div>
+
+</html>

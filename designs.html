@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<Head>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+
+<style>
+
+/* Create two equal columns that float next to each other */
+.column {
+    float: left;
+    width: 48.9%;
+    padding: 0.5vw;
+}
+
+.column img {
+    margin-top: 0.7vw;
+    width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+#myImg {
+    border-radius: 3px;
+    transition: 0.3s;
+	box-shadow: 7px 7px 3px grey;
+}
+
+
+
+</style>
+
+</head>
+
+<div id="fade">
+
+<div class="photos">
+
+<div class="row"> 
+  <div class="column">
+   <img class="myImages" id="myImg" img src="design2.jpg">
+   <img class="myImages" id="myImg" img src="design1.jpg">
+   <img class="myImages" id="myImg" img src="design3.jpg">
+  </div>
+
+<div class="column">
+   <img class="myImages" id="myImg" img src="design6.jpg">
+   <img class="myImages" id="myImg" img src="design5.jpg">
+   <img class="myImages" id="myImg" img src="design4.jpg">
+   <img class="myImages" id="myImg" img src="design7.jpg">
+ </div>
+
+</div>
+</div>
+
+</div>
+
+</html>
