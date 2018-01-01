@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>tomasmh</title>
+
+	<link rel="stylesheet" href="style.css">
+
+	<link rel="stylesheet" href="leaguefont.css" type="text/css" charset="utf-8">
+  
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+
+	
+<script>
+$(document).ready( function() {
+    $("#load_photos").on("click", function() {
+        $("#stuff").load("photos.html");
+    });
+});
+$(document).ready( function() {
+	 $("#load_designs").on("click", function() {
+        $("#stuff").load("designs.html");
+    });
+});
+$(document).ready( function() {
+	$("#load_actor").on("click", function() {
+        $("#stuff").load("actor.html");
+    });
+});
+$(document).ready( function() {
+	$("#load_music").on("click", function() {
+        $("#stuff").load("music.html");
+	    });
+});
+
+</script>
+<script>
+function footerAlign() {
+  $('footer').css('display', 'block');
+  $('footer').css('height', 'auto');
+  var footerHeight = $('footer').outerHeight();
+  $('body').css('padding-bottom', footerHeight);
+  $('footer').css('height', footerHeight);
+}
+
+
+$(document).ready(function(){
+  footerAlign();
+});
+
+$( window ).resize(function() {
+  footerAlign();
+});
+</script>
+
+</head>
+
+
+<body style="background-color: rgb(247, 247, 247);">
+
+<div id="fade"> 
+
+<div id="social">
+
+<a href="http://www.instagram.com/tomasmh/" target="_blank">
+<img src="insta.png" alt="Instagram logo" style="height: 3vw"> 
+</a>
+</div>
+
+<div id="name">
+<div id="lleft"> 
+<t1> 
+tomas. 
+</t1> 
+</div>
+
+</div>
+
+<div id="links">
+<div id="rright"> 
+<t2> 
+
+<a href="#" id="load_photos">
+photographer </a><br>
+
+<a href="#" id="load_music">
+musician </a><br>
+
+<a href="#" id="load_designs">
+designer </a><br>
+
+<a href="#" id="load_actor">
+actor </a><br>
+
+</t2> 
+</div>
+
+</div>
+
+<div class="outerstuff" align="center">
+
+<div id="stuff" align="center">
+</div>
+</div>
+
+<footer> <p1>contact me</p1> <br>
+website design and content &copy; Tomas MH 2018
+</footer>
+
+</div>
+</body>
+
+</html>
